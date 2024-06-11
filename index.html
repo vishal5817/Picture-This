@@ -1,75 +1,49 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accessible Me</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&family=Stick+No+Bills:wght@300&display=swap" rel="stylesheet">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Picture This!</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header class="site-header" role="banner">
-    <div class="container">
-      <h1 itemprop="name">Jam Box Studios</h1>
-      <nav class="main-nav" role="navigation" aria-label="Main Navigation">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Reservation</a></li>
-          <li><a href="#">Studio</a></li>
-        </ul>
-      </nav>
-      <img src="https://placekitten.com/1200/900" class="banner" alt="Banner image of Jam Box Studios">
+  <header class="header">
+    <div class="title">
+      <h1>Picture This!</h1>
+      <h4>My Really Cool Blog Post</h4>
     </div>
+    <picture>
+      <!-- square in 800, 1600 and 2400 -->
+
+      <source srcset="images/squares/museum-800_x_800.jpg, images/squares/museum-1600_x_1600.jpg 2x, 
+                      images/squares/museum-2400_x_2400.jpg 3x" media="(min-width: 1600px)">
+      <!-- square in 640, 1280, and 1440 -->
+
+      <source srcset="images/squares/museum-640_x_640.jpg, images/squares/museum-1280_x_1280.jpg 2x, 
+                      images/squares/museum-1440_x_1440.jpg 3x" media="(min-width: 1280px)">
+      <!-- square in 480, 960, and 1440 -->
+
+      <source srcset="images/squares/museum-480_x_480.jpg, images/squares/museum-960_x_960.jpg 2x, 
+                      images/squares/museum-1440_x_1440.jpg 3x" media="(min-width: 960px)">
+      <!--landscape in 320x180, 640x360, and 960x540 -->
+
+      <source srcset="images/landscape/museum-320_x_180.jpg, images/landscape/museum-640_x_360.jpg 2x, images/landscape/museum-960_x_540.jpg 3x" media="(min-width: 320px)">
+      <!--landscape in 480x270, 960x540, and 1440x810 -->
+
+      <source srcset="images/landscape/museum-480_x_270.jpg, images/landscape/museum-960_x_540.jpg 2x, images/landscape/museum-1440_x_810.jpg 3x" media="(min-width: 480px)">
+      <!-- Photos in landscape  -->
+
+      <source srcset="images/landscape/museum-720_x_405.jpg, images/landscape/museum-1440_x_810.jpg2x, images/landscape/museum-2160_x_1215.jpg 3x" media="(min-width: 720px)">
+      <!-- Photos in landscape  -->
+
+      <source srcset="images/landscape/museum-960_x_540.jpg, images/landscape/museum-1920_x_1080.jpg 2x, images/landscape/museum-2880_x_1621.jpg 3x" media="(min-width: 960px)">
+      
+      <img src="images/museum.jpg">
+    </picture> 
   </header>
-  <main id="main-content" class="main-content" role="main">
-    <div class="container">
-      <h1>Welcome to Jam Box</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
-      <section class="owner" itemprop="creator" itemscope itemtype="http://schema.org/Person">
-        <h2>Meet the owner</h2>
-        <ul>
-          <li>Name: <span itemprop="name">John Doe</span></li>
-          <li>Title: <span itemprop="jobTitle">CEO</span></li>
-          <li>Email: <a href="mailto:johnjoe@jambox.ca" itemprop="email">johnjoe@jambox.ca</a></li>
-          <li>Phone: <a href="tel:6130000000" itemprop="telephone">613-000-0000</a></li>
-        </ul>
-      </section>
-      <section class="address">
-        <h2>Address</h2>
-        <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-          <span itemprop="name">Jambox Studios</span><br>
-          <span itemprop="streetAddress">123 Guitar Road</span>,<br>
-          <span itemprop="addressLocality">Musicville</span>, 
-          <span itemprop="addressRegion">Danceistan</span><br>
-          <span itemprop="postalCode">B3T 0L0</span>
-        </p>
-      </section>
-      <section class="contact-section" itemprop="contactPoint" itemscope itemtype="http://schema.org/ContactPoint">
-        <h2>Contact Us</h2>
-        <form action="thanks.html">
-          <label for="full-name">Full Name</label>
-          <input type="text" id="full-name" name="full-name" placeholder="Full Name" required aria-required="true">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Email" required aria-required="true">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" placeholder="Subject" required aria-required="true">
-          <label for="message">Your Message</label>
-          <textarea id="message" name="message" placeholder="Your message" required aria-required="true"></textarea>
-          <button type="submit">Send</button>
-        </form>
-      </section>
-    </div>
-  </main>
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      &copy; 2021 Jam Box Studios
-    </div>
-  </footer>
+</body>
+
+</html>
